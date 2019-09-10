@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<Script language="javascript">   
+function getQueryString(name) {
+    var result = window.location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+    if (result == null || result.length < 1) {
+        return "";
+    }
+    return result[1];
+}
+
+</Script>
+
+
+<body>
+
+<audio id='audioid' controls="controls">
+Your browser does not support the audio element.
+</audio>
+
+</body>
+<Script language="javascript"> 
+	var str = getQueryString("audio");
+	document.getElementById('audioid').src = str
+
+</Script>
+</html>
+
